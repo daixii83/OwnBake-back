@@ -55,6 +55,17 @@ const userSchema = new mongoose.Schema({
         }
       }
     ]
+  },
+  reservation: {
+    type: [
+      {
+        reservation: {
+          type: mongoose.ObjectId,
+          ref: 'reservations',
+          required: [true, '缺少訂單 ID']
+        }
+      }
+    ]
   }
 }, { versionKey: false })
 

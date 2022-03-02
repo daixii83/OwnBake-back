@@ -20,6 +20,47 @@ const orderSchema = new mongoose.Schema({
       }
     ]
   },
+  order: {
+    delivery: {
+      type: String
+    },
+    pay: {
+      type: String
+    },
+    recipient: {
+      type: String
+    },
+    mobile: {
+      type: Number
+    },
+    email: {
+      type: String
+    },
+    address: {
+      type: String
+    },
+    remark: {
+      type: String
+    },
+    card: {
+      type: String
+    },
+    cardHolder: {
+      type: String
+    },
+    cardExpiry: {
+      type: String
+    },
+    cardCSC: {
+      type: Number
+    },
+    receipt: {
+      type: String
+    },
+    receiptCarrier: {
+      type: String
+    }
+  },
   date: {
     type: Date,
     default: Date.now

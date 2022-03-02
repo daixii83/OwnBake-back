@@ -29,7 +29,7 @@ export const checkout = async (req, res) => {
       res.status(400).send({ success: false, message: '包含下架商品' })
       return
     }
-    const result = await orders.create({ user: req.user._id, products: req.user.cart })
+    const result = await orders.create({ user: req.user._id, products: req.user.cart, order: req.body })
     req.user.cart = []
     await req.user.save()
     res.status(200).send({ success: true, message: '', result: result._id })
