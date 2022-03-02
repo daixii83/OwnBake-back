@@ -7,6 +7,7 @@ import {
   checkout,
   getMyOrders,
   getAllOrders
+  // completedOrders
 } from '../controllers/orders.js'
 
 const router = express.Router()
@@ -14,5 +15,6 @@ const router = express.Router()
 router.post('/', auth, content('application/json'), checkout)
 router.get('/me', auth, getMyOrders)
 router.get('/all', auth, admin, getAllOrders)
+// router.patch('/all', auth, admin, completedOrders)
 
 export default router

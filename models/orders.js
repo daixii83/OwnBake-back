@@ -60,7 +60,15 @@ const orderSchema = new mongoose.Schema({
     receiptCarrier: {
       type: String
     },
-    orderStatus: ''
+    code: {
+      type: String
+    },
+    orderStatus: {
+      type: Boolean
+    },
+    cancelStatus: {
+      type: Boolean
+    }
   },
   date: {
     type: Date,
