@@ -59,7 +59,8 @@ const orderSchema = new mongoose.Schema({
     },
     receiptCarrier: {
       type: String
-    }
+    },
+    orderStatus: ''
   },
   date: {
     type: Date,
