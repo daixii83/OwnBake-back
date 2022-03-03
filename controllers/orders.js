@@ -69,3 +69,15 @@ export const getAllOrders = async (req, res) => {
 //     res.status(500).send({ success: false, message: '伺服器錯誤' })
 //   }
 // }
+
+// export const completedOrders = async (req, res) => {
+//   try {
+//     const idx = req.order.findIndex(item => item.product.toString() === req.body.product)
+//     if (idx > -1) {
+//       req.user.cart[idx].quantity = req.body.quantity
+//     }
+//     await req.user.save()
+//   } catch (error) {
+//     res.status(500).send({ success: false, message: '伺服器錯誤' })
+//   }
+// }
