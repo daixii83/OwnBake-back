@@ -6,7 +6,8 @@ import admin from '../middleware/admin.js'
 import {
   checkout,
   getMyOrders,
-  getAllOrders
+  getAllOrders,
+  deleteOrders
   // completedOrders
 } from '../controllers/orders.js'
 
@@ -16,5 +17,6 @@ router.post('/', auth, content('application/json'), checkout)
 router.get('/me', auth, getMyOrders)
 router.get('/all', auth, admin, getAllOrders)
 // router.patch('/all', auth, admin, completedOrders)
+router.delete('/:id', auth, admin, deleteOrders)
 
 export default router

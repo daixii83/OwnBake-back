@@ -128,3 +128,16 @@ export const updateProductById = async (req, res) => {
     }
   }
 }
+
+export const deleteProducts = async (req, res) => {
+  try {
+    await products.findByIdAndDelete(req.params.id)
+    res.status(200).send({ success: true, message: '' })
+  } catch (error) {
+    if (error.name === 'CastError') {
+      res.status(404).send({ success: false, message: '找不到' })
+    } else {
+      res.status(500).send({ success: false, message: '伺服器錯誤' })
+    }
+  }
+}
