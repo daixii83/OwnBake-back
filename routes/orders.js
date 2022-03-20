@@ -7,7 +7,8 @@ import {
   checkout,
   getMyOrders,
   getAllOrders,
-  deleteOrders
+  deleteOrders,
+  cancelOrders
   // completedOrders
 } from '../controllers/orders.js'
 
@@ -18,5 +19,6 @@ router.get('/me', auth, getMyOrders)
 router.get('/all', auth, admin, getAllOrders)
 // router.patch('/all', auth, admin, completedOrders)
 router.delete('/:id', auth, admin, deleteOrders)
+router.patch('/:id', auth, content('application/json'), cancelOrders)
 
 export default router

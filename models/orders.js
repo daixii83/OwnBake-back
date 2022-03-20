@@ -62,13 +62,13 @@ const orderSchema = new mongoose.Schema({
     },
     code: {
       type: String
-    },
-    orderStatus: {
-      type: Boolean
-    },
-    cancelStatus: {
-      type: Boolean
     }
+  },
+  orderStatus: {
+    type: Boolean
+  },
+  cancelStatus: {
+    type: Boolean
   },
   date: {
     type: Date,
