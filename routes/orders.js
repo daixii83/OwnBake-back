@@ -8,7 +8,8 @@ import {
   getMyOrders,
   getAllOrders,
   deleteOrders,
-  cancelOrders
+  cancelOrders,
+  completedOrders
   // completedOrders
 } from '../controllers/orders.js'
 
@@ -20,5 +21,6 @@ router.get('/all', auth, admin, getAllOrders)
 // router.patch('/all', auth, admin, completedOrders)
 router.delete('/:id', auth, admin, deleteOrders)
 router.patch('/:id', auth, content('application/json'), cancelOrders)
+router.patch('/:id', auth, admin, content('application/json'), completedOrders)
 
 export default router
