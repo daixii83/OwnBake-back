@@ -65,10 +65,12 @@ const orderSchema = new mongoose.Schema({
     }
   },
   orderStatus: {
-    type: Boolean
+    type: Boolean,
+    default: false
   },
   cancelStatus: {
-    type: Boolean
+    type: Boolean,
+    default: false
   },
   date: {
     type: Date,
