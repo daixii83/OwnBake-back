@@ -10,7 +10,6 @@ import {
   deleteOrders,
   cancelOrders,
   completedOrders
-  // completedOrders
 } from '../controllers/orders.js'
 
 const router = express.Router()

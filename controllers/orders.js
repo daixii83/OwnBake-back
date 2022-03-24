@@ -117,7 +117,7 @@ export const completedOrders = async (req, res) => {
   console.log(req.body)
   console.log(req.params)
   const data = {
-    orderStatus: req.body.orderStatus
+    deliveryStatus: req.body.deliveryStatus
   }
   try {
     await orders.findByIdAndUpdate(req.params.id, data)

@@ -64,7 +64,7 @@ const orderSchema = new mongoose.Schema({
       type: String
     }
   },
-  orderStatus: {
+  deliveryStatus: {
     type: Boolean,
     default: false
   },
