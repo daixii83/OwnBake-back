@@ -1,6 +1,10 @@
 import mongoose from 'mongoose'
 
 const reservationSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    default: '已確認預約'
+  },
   user: {
     type: mongoose.ObjectId,
     ref: 'users'
