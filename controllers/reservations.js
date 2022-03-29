@@ -32,3 +32,22 @@ export const getAllReservations = async (req, res) => {
     res.status(500).send({ success: false, message: '伺服器錯誤' })
   }
 }
+
+export const cancelReservations = async (req, res) => {
+  console.log(req.body)
+  console.log(req.params)
+  const data = {
+    title: req.body.title,
+    color: req.body.color
+  }
+  try {
+    await reservations.findByIdAndUpdate(req.params.id, data)
+    res.status(200).send({ success: true, message: '' })
+  } catch (error) {
+    if (error.name === 'CastError') {
+      res.status(404).send({ success: false, message: '找不到預約' })
+    } else {
+      res.status(500).send({ success: false, message: '伺服器錯誤' })
+    }
+  }
+}

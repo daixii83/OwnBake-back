@@ -6,7 +6,8 @@ import admin from '../middleware/admin.js'
 import {
   reserve,
   getMyReservations,
-  getAllReservations
+  getAllReservations,
+  cancelReservations
 } from '../controllers/reservations.js'
 
 const router = express.Router()
@@ -14,5 +15,6 @@ const router = express.Router()
 router.post('/', auth, content('application/json'), reserve)
 router.get('/me', auth, getMyReservations)
 router.get('/all', auth, admin, getAllReservations)
+router.patch('/:id', auth, content('application/json'), cancelReservations)
 
 export default router

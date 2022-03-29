@@ -5,6 +5,10 @@ const reservationSchema = new mongoose.Schema({
     type: String,
     default: '已確認預約'
   },
+  color: {
+    type: String,
+    default: ''
+  },
   user: {
     type: mongoose.ObjectId,
     ref: 'users'
