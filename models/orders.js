@@ -64,13 +64,9 @@ const orderSchema = new mongoose.Schema({
       type: String
     }
   },
-  deliveryStatus: {
-    type: Boolean,
-    default: false
-  },
-  cancelStatus: {
-    type: Boolean,
-    default: false
+  orderStatus: {
+    type: String,
+    default: '處理中'
   },
   date: {
     type: Date,

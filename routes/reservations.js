@@ -7,7 +7,8 @@ import {
   reserve,
   getMyReservations,
   getAllReservations,
-  cancelReservations
+  cancelReservations,
+  deleteReservations
 } from '../controllers/reservations.js'
 
 const router = express.Router()
@@ -16,5 +17,6 @@ router.post('/', auth, content('application/json'), reserve)
 router.get('/me', auth, getMyReservations)
 router.get('/all', auth, admin, getAllReservations)
 router.patch('/:id', auth, content('application/json'), cancelReservations)
+router.delete('/:id', auth, admin, deleteReservations)
 
 export default router

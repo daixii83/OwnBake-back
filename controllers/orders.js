@@ -99,7 +99,7 @@ export const cancelOrders = async (req, res) => {
   console.log(req.body)
   console.log(req.params)
   const data = {
-    cancelStatus: req.body.cancelStatus
+    orderStatus: req.body.orderStatus
   }
   try {
     await orders.findByIdAndUpdate(req.params.id, data)
@@ -117,7 +117,7 @@ export const completedOrders = async (req, res) => {
   console.log(req.body)
   console.log(req.params)
   const data = {
-    deliveryStatus: req.body.deliveryStatus
+    orderStatus: req.body.orderStatus
   }
   try {
     await orders.findByIdAndUpdate(req.params.id, data)
