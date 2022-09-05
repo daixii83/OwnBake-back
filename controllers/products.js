@@ -28,8 +28,7 @@ export const getProducts = async (req, res) => {
 export const getAllProducts = async (req, res) => {
   try {
     const result = await products.find()
-    res.setHeader('Access-Control-Allow-Origin', '*')
-    // res.writeHead(200, { 'Access-Control-Allow-Origin': 'https://ownbake.herokuapp.com' })
+    res.setHeader('Access-Control-Allow-Origin', 'https://daixii83.github.io')
     res.status(200).send({ success: true, message: '', result })
   } catch (error) {
     res.status(500).send({ success: false, message: '伺服器錯誤' })
