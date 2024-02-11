@@ -13,15 +13,15 @@ mongoose.connect(process.env.DB_URL, () => {
 
 const app = express()
 
-const allowedOrigins = ['https://daixii83.github.io/']
+// const allowedOrigins = ['https://daixii83.github.io/']
 // set header
-app.use((req, res, next) => {
-  const origin = req.headers.origin
-  if (allowedOrigins.indexOf(origin) > -1) {
-    res.setHeader('Access-Control-Allow-Origin', origin)
-  }
-  res.header('Access-Control-Allow-Credentials', true)
-})
+// app.use((req, res, next) => {
+// const origin = req.headers.origin
+// if (allowedOrigins.indexOf(origin) > -1) {
+// res.setHeader('Access-Control-Allow-Origin', origin)
+// }
+// res.header('Access-Control-Allow-Credentials', true)
+// })
 
 app.use(cors({
   origin (origin, callback) {
