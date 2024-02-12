@@ -14,19 +14,6 @@ mongoose.connect(process.env.DB_URL, () => {
 
 const app = express()
 
-<<<<<<< HEAD
-// const allowedOrigins = ['https://daixii83.github.io/']
-// set header
-// app.use((req, res, next) => {
-// const origin = req.headers.origin
-// if (allowedOrigins.indexOf(origin) > -1) {
-// res.setHeader('Access-Control-Allow-Origin', origin)
-// }
-// res.header('Access-Control-Allow-Credentials', true)
-// })
-
-=======
->>>>>>> 1a3f12dc831c34e1cb9782e0ae76e3e5498cda72
 app.use(cors({
   origin (origin, callback) {
     if (origin === undefined || origin.includes('github') || origin.includes('localhost')) {

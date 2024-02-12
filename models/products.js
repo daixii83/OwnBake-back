@@ -23,7 +23,7 @@ const productSchema = new mongoose.Schema({
   productCategories: {
     type: String,
     enum: {
-      values: ['蛋糕', '餅乾', '塔&派', '點心'],
+      values: ['蛋糕', '餅乾', '塔&派', '點心', '烘焙用具'],
       message: '商品分類不存在'
     }
   }
