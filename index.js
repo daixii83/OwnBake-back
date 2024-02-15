@@ -1,4 +1,3 @@
-
 import 'dotenv/config'
 import express from 'express'
 import mongoose from 'mongoose'
@@ -24,22 +23,27 @@ app.use(cors({
   }
 }))
 
-app.use((_, req, res, next) => {
-  res.status(403).send({ success: false, message: '請求被拒絕' })
-})
-
 app.use(express.json())
-app.use((_, req, res, next) => {
-  res.status(400).send({ success: false, message: '資料格式錯誤' })
-})
 
 app.use('/users', usersRouter)
 app.use('/products', productsRouter)
 app.use('/orders', ordersRouter)
 app.use('/reservations', reservationsRouter)
 
+app.get('/alive', (req, res) => {
+  res.status(200).json({ success: true, message: 'Service is alive' })
+})
+
 app.all('*', (req, res) => {
   res.status(404).send({ success: false, message: '找不到' })
+})
+
+app.use((_, req, res, next) => {
+  res.status(403).send({ success: false, message: '請求被拒絕' })
+})
+
+app.use((_, req, res, next) => {
+  res.status(400).send({ success: false, message: '資料格式錯誤' })
 })
 
 app.listen(process.env.PORT || 3000, () => {
